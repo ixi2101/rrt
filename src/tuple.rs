@@ -1,4 +1,4 @@
-use std::{cmp::{max, min}, default, ops::{Add, Div, Mul, Neg, Sub}};
+use std::ops::{Add, Div, Mul, Neg, Sub};
 
 #[derive(Debug, Default, Clone, Copy, PartialEq, PartialOrd)]
 pub struct Tuple {
@@ -16,14 +16,9 @@ impl Add for Tuple {
             x: self.x + rhs.x,
             y: self.y + rhs.y,
             z: self.z + rhs.z,
-            w: {if self.w + rhs.w >= 1.0{
-                1.0
-            }else {
-                0.0
-            }
+            w: { if self.w + rhs.w >= 1.0 { 1.0 } else { 0.0 } },
         }
     }
-}
 }
 
 impl Sub for Tuple {
@@ -34,12 +29,7 @@ impl Sub for Tuple {
             x: self.x - rhs.x,
             y: self.y - rhs.y,
             z: self.z - rhs.z,
-            w: {if self.w - rhs.w <= 0.0{
-                0.0
-            }else{
-                1.0
-            }
-            }
+            w: { if self.w - rhs.w <= 0.0 { 0.0 } else { 1.0 } },
         }
     }
 }
@@ -120,11 +110,21 @@ impl Tuple {
     }
 
     pub fn point(x: f32, y: f32, z: f32) -> Tuple {
-        Tuple { x: x, y: y, z: z, w: 1.0 } 
+        Tuple {
+            x,
+            y,
+            z,
+            w: 1.0,
+        }
     }
 
     pub fn vector(x: f32, y: f32, z: f32) -> Tuple {
-        Tuple { x: x, y: y, z: z, w: 0.0 } 
+        Tuple {
+            x,
+            y,
+            z,
+            w: 0.0,
+        }
     }
 
     pub fn magnitude(&self) -> f32 {
