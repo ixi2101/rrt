@@ -8,18 +8,8 @@ use rrt::Tuple;
 // Cucumber constructs it via `Default::default()` for each scenario.
 #[derive(Debug, Default, World)]
 pub struct TupleWorld {
-    t: Tuple,
     tmap: HashMap<String, Tuple>,
 }
-impl TupleWorld {
-    fn get_at(&self, idx: String) -> &Tuple {
-        &self.tmap[&idx]
-    }
-}
-
-// Steps are defined with `given`, `when` and `then` attributes.
-#[given("a hungry cat")]
-fn hungry_cat(world: &mut TupleWorld) {}
 
 #[given(expr = "{word} = tuple\\({float}, {float}, {float}, {float}\\)")]
 fn tuple_created(world: &mut TupleWorld, idx: String, x: f32, y: f32, z: f32, w: f32) {
