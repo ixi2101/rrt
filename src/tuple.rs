@@ -110,21 +110,11 @@ impl Tuple {
     }
 
     pub fn point(x: f32, y: f32, z: f32) -> Tuple {
-        Tuple {
-            x,
-            y,
-            z,
-            w: 1.0,
-        }
+        Tuple { x, y, z, w: 1.0 }
     }
 
     pub fn vector(x: f32, y: f32, z: f32) -> Tuple {
-        Tuple {
-            x,
-            y,
-            z,
-            w: 0.0,
-        }
+        Tuple { x, y, z, w: 0.0 }
     }
 
     pub fn magnitude(&self) -> f32 {

@@ -23,15 +23,7 @@ fn hungry_cat(world: &mut TupleWorld) {}
 
 #[given(expr = "{word} = tuple\\({float}, {float}, {float}, {float}\\)")]
 fn tuple_created(world: &mut TupleWorld, idx: String, x: f32, y: f32, z: f32, w: f32) {
-    world.tmap.insert(
-        idx,
-        Tuple {
-            x,
-            y,
-            z,
-            w,
-        },
-    );
+    world.tmap.insert(idx, Tuple { x, y, z, w });
 }
 
 #[given(expr = "{word} = point\\({float}, {float}, {float}\\)")]
