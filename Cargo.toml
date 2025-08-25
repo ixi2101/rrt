@@ -1,0 +1,15 @@
+[package]
+name = "rrt"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+assert_float_eq = "1.1.4"
+
+[dev-dependencies]
+cucumber = "0.20"
+futures = "0.3"
+
+[[test]]
+name = "tuple_test"
+harness = false
